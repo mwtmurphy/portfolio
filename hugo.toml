@@ -1,3 +1,27 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://www.mwtmurphy.com/'
+languageCode = 'en-gb'
+author = 'Mitchell Murphy'
+paginate = 3
+
+theme = 'paper'
+title = 'Portfolio'
+
+[params]
+  color = 'linen'
+
+  github = 'mwtmurphy'
+  linkedin = 'mwtmurphy'
+
+  avatar = 'hi@mwtmurphy.com'
+  name = 'Mitchell Murphy'
+  bio = 'Lead Data Scientist @ Motorway'
+
+  enableGitInfo = true
+  monoDarkIcon = true
+  math = true
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = 'v0.115.4'
+    max = 'v0.115.4' 
