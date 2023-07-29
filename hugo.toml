@@ -4,7 +4,7 @@ author = 'Mitchell Murphy'
 paginate = 3
 
 theme = 'paper'
-title = 'Portfolio'
+title = 'Mitchell Murphy'
 
 [params]
   color = 'linen'
@@ -13,8 +13,8 @@ title = 'Portfolio'
   linkedin = 'mwtmurphy'
 
   avatar = 'hi@mwtmurphy.com'
-  name = 'Mitchell Murphy'
-  bio = 'Lead Data Scientist @ Motorway'
+  name = 'Lead Data Scientist @ Motorway'
+  bio = 'Building data products to improve decision-making.'
 
   enableGitInfo = true
   monoDarkIcon = true
