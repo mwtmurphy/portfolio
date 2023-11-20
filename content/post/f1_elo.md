@@ -14,6 +14,6 @@ This has all culminated in a recent party where someone brought up for the n-hun
 
 > Who is the F1 greatest of all time (GOAT)?
 
-There are many opinions. Is it Fangio, Senna, Michael Schumacher, Hamilton or Michael Masi? Well, given I have the hammer (data science and the chess/F1 thing) why don't I try and find out who it is.
+There are many opinions. Is it Senna, Michael Schumacher, Hamilton or Michael Masi? Sorry, not sorry for that F1 joke. Well, given I have the hammer (data science and the chess/F1 thing) why don't I try and find out who it is.
 
-If you want to skip ahead and see the final results, see the streamlit app [here](https://f1-elo.streamlit.app/). If you'd like to see how I created the app, keep reading!
+If you want to skip ahead and see the final results, see the results [here](https://f1-elo.streamlit.app/). If you'd like to understand the method I used, keep reading!
