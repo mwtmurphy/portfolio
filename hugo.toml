@@ -23,5 +23,3 @@ title = 'Mitchell Murphy'
 [module]
   [module.hugoVersion]
     extended = true
-    min = 'v0.115.4'
-    max = 'v0.115.4' 
