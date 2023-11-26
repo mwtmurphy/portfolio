@@ -4,6 +4,7 @@ date: 2023-11-20T15:00:00
 draft: true
 tags: ["python", "elo-scoring", "streamlit"]
 math: True
+weight: 10
 ---
 
 ## Context
