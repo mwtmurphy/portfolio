@@ -1,26 +1,31 @@
 ---
 title: "Who is the F1 GOAT?"
+description: "Using data to identify the F1 greatest of all time."
 date: 2023-11-20T15:00:00
 draft: true
-tags: ["python", "elo-scoring", "streamlit"]
+tags: ["python", "data-science", "streamlit"]
 math: True
 weight: 10
 ---
 
 ## Context
 
-I'm a big armchair fan of F1. I've played 100+ hours of the F1 games and there's nothing I like more on a race day than turning on the TV, muting the F1 commentary until the theme tune kicks in and feeling the wave of anxiety rush over me a few minutes before the start of a race that has no bearing on my personal life begins. If you know, you know.
+I'm a big F1 fan. I've played too many hours of multiple F1 games and there's nothing I like more on a race day than turning on the TV, butchering an impersonation of the theme tune and feeling a wave of anxiety rush over me minutes before the start of a race that has no bearing on my personal life.
 
-Recently, and for the n-hundreth time, the golden question was raised:
+Recently for the n-hundreth time, I overheard the classic F1 debate about who is the F1 greatest of all time (GOAT). There are many opinions, typically based on a mix of on-track and off-track actions. Fortunately, the folks over at [Ergast](https://ergast.com/mrd/) have collated race results between the first F1 race in 1950 to the last race of the 2024 season.
 
-> Who is the F1 greatest of all time (GOAT)?
-
-There are many opinions. Is it Senna, Schumacher, Hamilton or Michael Masi? Sorry, too soon. Well, given I have the hammer (data science) why don't I try and find out who it is.
-
-If you want to skip ahead and see the final results, see the results [here](https://f1-elo.streamlit.app/). If you'd like to understand the method I used, keep reading!
+Below I'll go through the approach I took to identify - at least in the data - the F1 GOAT. If you want to skip ahead to the answer, click [here](https://f1-elo.streamlit.app/).
 
 ## Method
 
-At time of writing, I follow the CODE method [^1] for data projects. This allows me to cast the net wide on new and existing knowledge before distilling and building an appropriate user-facing solution.
+- Intro to Elo scoring and parameters than can be modified
+- Measuring accuracy and optimising parameters
+- Applying Elo to multiplayer games - improvement seen
+- Applying Elo to assymetric team games - improvement seen
+- Choosing the GOAT
 
-[^1]: [Building a Second Brain](https://www.amazon.co.uk/Building-Second-Brain-Organise-Potential/dp/1800812213) (last accessed 2023-11-21)
+## Output
+
+- Intro to Streamlit
+- Visualising results
+- Allowing EDA for the fun of it

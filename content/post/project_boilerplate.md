@@ -1,7 +1,7 @@
 ---
 title: "My - not first - project boilerplate"
 date: 2023-11-27T15:00:00
-draft: false
+draft: true
 tags: ["dataops", "mlops", "python"]
 math: true
 ---
