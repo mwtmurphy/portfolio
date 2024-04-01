@@ -29,17 +29,27 @@ Before the fun part starts, there's always data cleaning. Simplifying assumption
 
 ### Intro to rating systems
 
-The best way to understand the relative skill levels of players is through a rating system. A player rated 2500 in theory has a higher probability of beating a 500-rated player than a 2000-rated player, but how do you calculate these numbers? Turns out there are many ways but the Elo rating system and derivations of it have been most commonly used since it's introduction to Chess in the 1960s, branching out to many sports and esports over the years.
+The current best way to understand the relative skill levels of players is through a rating system. A player rated 2500 in theory has a higher probability of beating a 500-rated player than a 2000-rated player, but how do you calculate these numbers? Turns out there are many ways but the [Elo rating system](https://en.wikipedia.org/wiki/Elo_rating_system) and derivations of it have been most commonly used since its introduction to Chess in the 1960s, branching out to many sports and esports since.
 
-Long story short, Elo believed that a player's rating was a normally distributed random variable with identical and fixed variance for all players.
+Ratings have a starting value $R_0$ for all players, with rating changes for every game $n$ ($n \in [1, 2, ...]$) based on the difference between the expected result $e$ of a match between players $i$ and $j$ vs the actual result $a$ (0 being a loss, 1 being a win). Tweaking this for F1 as a multiplayer game with $d$ players (where $d \in [1, 2, y_d]$ and $y_d$ is the number of drivers racing in year $y$) you get:
 
-- Intro to Elo scoring and parameters that can be modified
-- Necessary data cleaning
-- Measuring accuracy and optimising parameters
-- Baseline accuracy
-- Applying Elo to multiplayer games - improvement seen
-- Applying Elo to asymmetric team games - improvement seen
-- Choosing the GOAT
+$$
+  R_{n, i} = R_{n-1, i} + K \left( \sum_{d=1, d \neq i}^{d_y} e_{n, i, d} - a_{n, i, d} \right)
+$$
+
+Note, this also ignores where drivers race in the same cars. $K$ is the scalar applied to any difference between $e$ and $a$ per match, but $e$ is where the magic happens as it determines the degree to which a difference in the expected vs actual results causes a change in the rating and this is where the rest of the project focusses.
+
+### Evaluating accuracy
+
+To improve the estimate of $e$, you need to understand the accuracy of the rating system for each $e$ vs $a$. Given this system is modelling the probability of a win, root of the [Brier score](https://en.wikipedia.org/wiki/Brier_score) can be used to measure this in an easy-to-understand way as it can be seen as the mean error of predicting a win.
+
+To define ROI on any model tweaks lets define the easiest baseline model, that every race result is a random guess and expected results are based on this. Simulating this 5 times yields a mean error of 0.7075.
+
+## Predicting the expected outcome
+
+The Elo rating system assumes...
+
+## Choosing the GOAT
 
 ## Output
 
