@@ -9,6 +9,7 @@ title = 'Mitchell Murphy'
 [params]
   color = 'linen'
 
+  cv = 'files/mitchell_murphy_cv.pdf'
   github = 'mwtmurphy'
   linkedin = 'mwtmurphy'
 
