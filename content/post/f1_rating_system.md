@@ -1,9 +1,8 @@
 ---
 title: "Who is the F1 GOAT?"
 description: "Using data to identify the F1 greatest of all time."
-date: 2023-11-20T15:00:00
-draft: true
-tags: ["python", "data-science", "streamlit"]
+date: 2024-07-15T15:00:00
+tags: ["python", "f1", "rating-system", "streamlit"]
 math: True
 weight: 10
 ---
@@ -53,6 +52,43 @@ The Elo rating system assumes...
 
 ## Output
 
-- Intro to Streamlit
-- Visualising results
-- Allowing EDA for the fun of it
+
+
+# Background
+
+# Challenge
+
+1. F1 is a multi-person sport where teams have unequal performance (e.g. 10 2-person teams in 2024) meaning a low-rated driver in a high-rated team can race against a high-rated driver in a low-rated team. Creating a rating system that can separate the two is necessary.
+2. A driver can retire from a race due to a driver or constructor-led reason, and should effect their respective ratings dependent on the retirement reason.
+
+# Formula
+
+$r'_c$ and $r'_d$ are the ratings of a constructor and driver prior to a race, starting at 1500 if they have not entered a race before. $r'_{c, d} = wr'_c + r'_d$ is a constructor-driver combined rating where $w \in \R^+$ is a scalar value applied to the constructor's rating and, for simplicity, a combination $(c, d)$ will be relabelled as $i$ from here on. 
+
+
+Upon completion of the next race where $N$ combinations participate, the change in rating of a combination can be calculated as: 
+
+$$
+    c_i = \frac{k(o_i - e_i)}{N-1}
+$$
+
+where $k \in \R^+$ is a scalar of the difference between $o_i$, the true outcome for the completed race, and $e_i$ the expected outcome, formula for which are below:
+
+$$
+    \begin{align*}
+        o_i &= \sum^N_{j=1, i \ne j} I_{i, j} \\
+        I_{i, j} &= \begin{cases} 
+            1 & \text{if \( i \) positions higher than \( j \)} \\ 
+            0 & \text{if \( i \) positions higher than \( j \)} 
+        \end{cases} \\
+        e_i &= \sum^N_{j=1, i \ne j} \frac{1}{1 + e^{-R'_{i, j} / s}} \\
+        R'_{i, j} &= r'_i - r'_j
+    \end{align*}
+$$
+
+$s$ is scalar of the influence of rating differences on probability for combination $i$ to beat combination $j$.
+
+
+# Results
+# Improvements
+
